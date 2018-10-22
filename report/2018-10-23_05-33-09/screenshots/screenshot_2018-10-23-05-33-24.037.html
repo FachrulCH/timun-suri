@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="Copyright" content="PopojiCMS" />
+	<meta name="robots" content="index, follow" />
+    <meta name="description" content="Log In Panel PopojiCMS" />
+    <meta name="generator" content="PopojiCMS 2.0.0" />
+    <meta name="author" content="Dwira Survivor" />
+    <meta name="language" content="Indonesia" />
+    <meta name="revisit-after" content="7" />
+    <meta name="webcrawlers" content="all" />
+    <meta name="rating" content="general" />
+    <meta name="spiders" content="all" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <!--[if gt IE 8]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <![endif]-->
+    <title>Log In Panel</title>
+    <link rel="shortcut icon" href="../po-includes/images/favicon.png" />
+
+	<link type="text/css" rel="stylesheet" href="../po-includes/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="../po-includes/css/font-awesome.min.css" />
+	<link type="text/css" rel="stylesheet" href="../po-includes/css/login.css" />
+	<link type="text/css" rel="stylesheet" href="../po-includes/css/patternlock.css" />
+
+	<script type="text/javascript" src="../po-includes/js/jquery/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../po-includes/js/bootstrap/bootstrap.min.js"></script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<section id="login">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-wrap">
+						<div class="col-md-12 text-center">
+							<img src="../po-includes/images/logo.png" class="logo" width="100" />
+						</div>
+								<h1>Log In Panel</h1>
+				<form role="form" action="route.php?mod=login&amp;act=proclogin" method="post" id="form-login" autocomplete="off">
+			<div class="form-group">
+				<label for="login-username" class="sr-only">Username</label>
+				<input type="text" name="username" id="login-username" class="form-control" placeholder="Username" />
+			</div>
+			<div class="form-group box-password" style="display: none;">
+				<label for="password" class="sr-only">Password</label>
+				<div class="box-con-password"></div>
+			</div>
+			<div class="checkbox box-checkbox" style="display: none;">
+				<span class="character-checkbox" onclick="showPassword()"></span>
+				<span class="label">Show password</span>
+			</div>
+			<div class="form-group box-password-lock" style="display:none;">
+				<div id="patternHolder" style="margin: 0px auto; width: 230px; height: 230px; position: relative;" class="patt-holder"><ul class="patt-wrap" style="padding:10px"><li class="patt-circ" style="margin:10px; width : 50px; height : 50px; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; "><div class="patt-dots"></div></li><li class="patt-circ" style="margin:10px; width : 50px; height : 50px; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; "><div class="patt-dots"></div></li><li class="patt-circ" style="margin:10px; width : 50px; height : 50px; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; "><div class="patt-dots"></div></li><li class="patt-circ" style="margin:10px; width : 50px; height : 50px; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; "><div class="patt-dots"></div></li><li class="patt-circ" style="margin:10px; width : 50px; height : 50px; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; "><div class="patt-dots"></div></li><li class="patt-circ" style="margin:10px; width : 50px; height : 50px; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; "><div class="patt-dots"></div></li><li class="patt-circ" style="margin:10px; width : 50px; height : 50px; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; "><div class="patt-dots"></div></li><li class="patt-circ" style="margin:10px; width : 50px; height : 50px; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; "><div class="patt-dots"></div></li><li class="patt-circ" style="margin:10px; width : 50px; height : 50px; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; "><div class="patt-dots"></div></li></ul></div>
+				<div class="box-con-password-lock"></div>
+			</div>
+			<div class="form-group form-actions box-action" style="display: none;">
+				<input type="submit" id="btn-login" class="btn btn-custom btn-block" value="Log in" />
+			</div>
+		</form>
+		<a href="index.php?mod=login&amp;act=forgot" class="forget" title="Forgot your password?">Forgot your password?</a><hr />
+								<div class="col-md-12 text-center" id="footer">
+							<p>PopojiCMS © 2013-2016. MIT License</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript" src="../po-includes/js/patternlock/patternLock.js"></script>
+	<script type="text/javascript" src="../po-includes/js/login-core.js"></script>
+
+
+</body></html>
