@@ -1,14 +1,15 @@
 Given(/^user is on login page$/) do
-  visual_match 'container', 'container'
+  # visual_match 'container', 'container'
   @login_page = LoginPage.new
   @login_page.load
   @login_page.wait_until_txt_username_visible
 end
 
 When(/^login as invalid username$/) do
-  @login_page.txt_username.send_keys 'admin'
+  @login_page.txt_username.send_keys 'cucok meyong'
   sleep 3
-  take_screenshot_and_crop '.container', '.container'
+  take_screenshot_and_crop 'container', '.container'
+  expect('container.png').to be_visual_match('container')
 end
 
 Then(/^password field should not show up$/) do

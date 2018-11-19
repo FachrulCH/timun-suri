@@ -50,9 +50,10 @@ def take_screenshot_and_crop(name_file, css_element_crop, folder = 'report/scree
 end
 
 def visual_match(actual, expected)
-  imchr = Imatcher::Matcher.new threshold: 0.05, mode: :grayscale
+  imchr = Imatcher::Matcher.new threshold: 0, mode: :grayscale
   base_path = File.expand_path('.', Dir.pwd) + '/screenshots/'
   file_atual = File.join(base_path, 'current_images/') + actual + '.png'
+  p "nah ini aktual #{file_atual}"
   file_baseline = File.join(base_path, 'baseline/') + expected + '.png'
   file_diff = File.join(base_path, 'diffs/') + actual + '_diff_' + expected + '.png'
   comparison = imchr.compare(file_atual, file_baseline)
@@ -60,4 +61,23 @@ def visual_match(actual, expected)
   p @score
   comparison.difference_image.save(file_diff) if comparison.match? != true
   expect(comparison.match?).to be true
+end
+
+RSpec::Matchers.define :be_visual_match do |expected|
+  match do |actual|
+    # actual = full path file
+    base_path = File.expand_path('.', Dir.pwd) + '/screenshots/'
+    file_atual = File.expand_path('.', Dir.pwd) + '/report/screenshots/croped_files/' + actual
+    # return false unless File.file?(actual)
+    imchr = Imatcher::Matcher.new threshold: 0.05, mode: :grayscale
+    file_baseline = File.join(base_path, 'baseline/') + expected + '.png'
+    comparison = imchr.compare(file_atual, file_baseline)
+    @score = comparison.score
+    file_diff = File.join(base_path, 'diffs/') + expected + '_differenciation.png'
+    comparison.difference_image.save(file_diff) if comparison.match? != true
+    expect(comparison.match?).to be true
+  end
+  failure_message_for_should do |_actual|
+    "Two images are expected to be match, but they are #{@score} different"
+  end
 end
