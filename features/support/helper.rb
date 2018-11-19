@@ -39,8 +39,6 @@ def take_screenshot_and_crop(name_file, css_element_crop, folder = 'report/scree
   right = size['width']
   bottom = size['height']
   p [left, top, right, bottom]
-  new_image = image.flip_horizontally.rotate_right
-
   # crop original image and save
   # crop original image
   # if OS.mac?
