@@ -67,13 +67,13 @@ RSpec::Matchers.define :be_visual_match do |expected|
   match do |actual|
     # actual = full path file
     base_path = File.expand_path('.', Dir.pwd) + '/screenshots/'
-    file_atual = File.expand_path('.', Dir.pwd) + '/report/screenshots/croped_files/' + actual
+    file_atual = File.expand_path('.', Dir.pwd) + "/report/screenshots/croped_files/#{actual}.png"
     # return false unless File.file?(actual)
     imchr = Imatcher::Matcher.new threshold: 0.05, mode: :grayscale
     file_baseline = File.join(base_path, 'baseline/') + expected + '.png'
     comparison = imchr.compare(file_atual, file_baseline)
     @score = comparison.score
-    file_diff = File.join(base_path, 'diffs/') + expected + '_differenciation.png'
+    file_diff = File.join(base_path, 'diffs/') + expected + '_differences.png'
     comparison.difference_image.save(file_diff) if comparison.match? != true
     expect(comparison.match?).to be true
   end
