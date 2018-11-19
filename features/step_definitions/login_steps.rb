@@ -24,7 +24,7 @@ Then(/^show alert "(.*)"$/) do |text|
   expect(@login_page.alert.text).to include text
 end
 
-Then (/^user should be redirected to admin dashboard page$/) do
+Then(/^user should be redirected to admin dashboard page$/) do
   @admin_page = AdminDashbordPage.new
   expect(@admin_page.current_url).to include 'admin.php'
   expect(@admin_page).to have_side_menu
