@@ -1,16 +1,19 @@
-Given (/^user is on login page$/) do
+Given(/^user is on login page$/) do
+  visual_match 'container', 'container'
   @login_page = LoginPage.new
   @login_page.load
   @login_page.wait_until_txt_username_visible
 end
 
 When(/^login as invalid username$/) do
-  @login_page.txt_username.set "asoygeboy"
+  @login_page.txt_username.send_keys 'admin'
+  sleep 3
+  take_screenshot_and_crop '.container', '.container'
 end
 
 Then(/^password field should not show up$/) do
   expect(@login_page.has_no_txt_password?).to be true
-end 
+end
 
 When(/^login as "(.*)" with password "(.*)"$/) do |username, paswd|
   @login_page.login_as username, paswd

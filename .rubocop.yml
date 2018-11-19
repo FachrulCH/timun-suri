@@ -1,0 +1,21 @@
+AllCops:
+  Include:
+    - Gemfile
+    - Rakefile
+  Exclude:
+    - bin/**/*
+    - vendor/**/*
+    - tmp/**/*
+
+Metrics/LineLength:
+  Max: 119
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 20
+
+Style/Documentation:
+  Enabled: false
+  
+Style/FrozenStringLiteralComment:
+  Enabled: false
