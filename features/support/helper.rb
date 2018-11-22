@@ -41,11 +41,11 @@ def take_screenshot_and_crop(name_file, css_element_crop, folder = 'report/scree
   p [left, top, right, bottom]
   # crop original image and save
   # crop original image
-  # if OS.mac?
-  #   image.crop!(left * 2, top * 2, right * 2, bottom * 2)
-  # else
-  image.crop!(left, top, right, bottom)
-  # end
+  if OS.mac?
+    image.crop!(left * 2, top * 2, right * 2, bottom * 2)
+  else
+    image.crop!(left, top, right, bottom)
+  end
   image.save(file)
 end
 
