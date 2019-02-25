@@ -3,5 +3,5 @@ Feature: Percobaan
    Feature Description
 
   Scenario: Pertamax
-    Given I open the app
-    When I login with invalid cred
+    Given I open demo app
+    When I do something

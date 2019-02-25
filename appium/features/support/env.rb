@@ -29,8 +29,9 @@ desired_caps = {
     automationName: ENV['AUTOMATION_NAME'],
     # platformVersion: ENV[''],
     appPackage: ENV['APP_PACKAGE'],
-    appActivity: ENV['APP_ACTIVITY']
-    # app:        APP_PATH,
+    appActivity: ENV['APP_ACTIVITY'],
+    app:        ENV['APP_PATH'],
+    newCommandTimeout: '3600'
   },
   appium_lib: {
     sauce_username:   nil, # don't run on Sauce
@@ -40,3 +41,15 @@ desired_caps = {
 
 Appium::Driver.new(desired_caps, true)
 Appium.promote_appium_methods Object
+
+# clear report files
+report_root = File.absolute_path('./report')
+if ENV['REPORT_PATH'].nil?
+  # remove report directory when run localy,
+  # ENV report will initiate from rakefile, or below this
+  puts ' ========Deleting old reports ang logs========='
+  FileUtils.rm_rf(report_root, secure: true)
+end
+ENV['REPORT_PATH'] ||= Time.now.strftime('%F_%H-%M-%S')
+ENV['OUTPUT_PATH'] = "#{report_root}/#{ENV['REPORT_PATH']}"
+FileUtils.mkdir_p ENV['OUTPUT_PATH']
