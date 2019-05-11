@@ -1,0 +1,1 @@
+default: --format pretty --format html --out=report/<%= ENV['REPORT_PATH']%>/features_reports.html -f rerun  -o report/<%= ENV['REPORT_PATH']%>/rerun.txt
