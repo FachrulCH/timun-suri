@@ -5,13 +5,13 @@ GEM
       appium_lib_core (~> 3.1)
       nokogiri (~> 1.8, >= 1.8.1)
       tomlrb (~> 1.1)
-    appium_lib_core (3.1.1)
+    appium_lib_core (3.1.2)
       faye-websocket (~> 0.10.0)
       selenium-webdriver (~> 3.14, >= 3.14.1)
     appom (1.1.4)
       appium_lib (>= 9.4)
       cucumber (>= 2.3)
-    backports (3.13.0)
+    backports (3.14.0)
     builder (3.2.3)
     childprocess (1.0.1)
       rake (< 13.0)
@@ -48,8 +48,6 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    pry-nav (0.3.0)
-      pry (>= 0.9.10, < 0.13.0)
     rake (12.3.2)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
@@ -65,7 +63,7 @@ GEM
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
     rubyzip (1.2.2)
-    selenium-webdriver (3.142.0)
+    selenium-webdriver (3.142.2)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
     tomlrb (1.2.8)
@@ -82,8 +80,7 @@ DEPENDENCIES
   cucumber
   dotenv
   pry
-  pry-nav
   rspec
 
 BUNDLED WITH
-   1.17.1
+   2.0.1
