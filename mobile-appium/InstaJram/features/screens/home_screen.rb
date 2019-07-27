@@ -8,4 +8,6 @@ class WelcomeScreen < Appom::Page
   elements :loveit, :xpath, '//android.widget.ImageView[@resource-id="com.instagram.android:id/row_feed_button_like"]'
   elements :group_actions, :accessibility_id, 'com.instagram.android:id/row_feed_view_group_buttons'
   elements :group_actions_like, :accessibility_id, 'row_feed_button_like'
+  elements :photos, '//android.view.ViewGroup[@resource-id="com.instagram.android:id/row_feed_photo_combined_tagging"]'
+  elements :photos2, :id, 'row_feed_photo_combined_tagging'
 end
