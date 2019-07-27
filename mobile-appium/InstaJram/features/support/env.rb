@@ -19,7 +19,9 @@ caps = {
   appActivity: ENV['APP_ACTIVITY'],
   app: ENV['APP_PATH'],
   newCommandTimeout: 3600,
-  noReset: true
+  noReset: true,
+  unicodeKeyboard: true,
+  resetKeyboard: true
 }
 
 Appom.register_driver do

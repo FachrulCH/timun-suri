@@ -23,3 +23,13 @@ def swipe_down
   end_y = height * 90 / 100
   swipe start_x, start_x, start_y, end_y
 end
+
+def double_click(access_type, access_value)
+  element = Appom.driver.find_element(:"#{access_type}" => access_value.to_s)
+  action.double_click(element).perform
+end
+
+def single_tap(access_type, access_value)
+  element = Appom.driver.div(:"#{access_type}" => access_value.to_s)
+  element.touch_action(:tap)
+end
